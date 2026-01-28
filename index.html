@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Travel | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Home Page Specific Styles */
+        #home {
+            height: 100vh;
+            background: linear-gradient(rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8)), url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1635&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .featured-packages {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .featured-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonials {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .testimonial-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .client-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Jalan<span>Jalan</span> Travel</a>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active-link">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="packages.html">Travel Packages</a></li>
+                    <li><a href="review.html">Review</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero-content">
+            <h1>Discover Your Next Adventure</h1>
+            <p>Experience the world's most breathtaking destinations with our expertly crafted travel packages. Your dream vacation awaits.</p>
+            <a href="packages.html" class="btn">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Packages Section -->
+    <section class="featured-packages">
+        <div class="container">
+            <h2 class="section-title">Featured Packages</h2>
+            <div class="featured-container">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <img src="images/The Beauty of Bedugul Bali – Nature & Culture Escape.jpg" alt="Bali" class="package-img">
+                    <div class="package-content">
+                        <h3>Bali Paradise</h3>
+                        <div class="package-details">
+                            <span><i class="far fa-calendar"></i> 7 Days</span>
+                            <span><i class="fas fa-users"></i> 2-4 People</span>
+                        </div>
+                        <div class="package-price"> RM 1,299</div>
+                        <p>Experience the magical island of Bali with its beautiful beaches and vibrant culture.</p>
+                        <a href="packages.html" class="btn" style="width: 100%; text-align: center; margin-top: 15px;">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="package-card">
+                    <img src="images/Maldives Guide_ Navigate the Hidden Wonders of Maldives.jpg" alt="Maldives" class="package-img">
+                    <div class="package-content">
+                        <h3>Wonderful Maldives</h3>
+                        <div class="package-details">
+                            <span><i class="far fa-calendar"></i> 10 Days</span>
+                            <span><i class="fas fa-users"></i> 1-6 People</span>
+                        </div>
+                        <div class="package-price"> RM 2,499</div>
+                        <p>Explore the stunning Maldives with crystal clear turquoise waters, pristine white sand beaches, and unforgettable island adventures.</p>
+                        <a href="packages.html" class="btn" style="width: 100%; text-align: center; margin-top: 15px;">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <img src="images/Turquía, autorretrato en diez fotos.jpg" alt="Japan" class="package-img">
+                    <div class="package-content">
+                        <h3>Turkiye Cultural Journey</h3>
+                        <div class="package-details">
+                            <span><i class="far fa-calendar"></i> 12 Days</span>
+                            <span><i class="fas fa-users"></i> 2-5 People</span>
+                        </div>
+                        <div class="package-price"> RM 3,199</div>
+                        <p>Immerse yourself in Turkiye's rich culture, from ancient temples to modern cities.</p>
+                        <a href="packages.html" class="btn" style="width: 100%; text-align: center; margin-top: 15px;">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Travelers Say</h2>
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <p>"Our trip to Bali was absolutely amazing! Jalan Jalan Travel planned everything perfectly. We'll definitely use them again!"</p>
+                    <div class="client-info">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <span>Bali Traveler</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>"Wonderful Maldives tour exceeded all expectations. Every detail was taken care of. Highly recommended!"</p>
+                    <div class="client-info">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Michael Chen">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <span>Maldives Traveler</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>"Turkiye was a dream come true. The cultural experiences were authentic and well-organized. Thank you!"</p>
+                    <div class="client-info">
+                        <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="Jessica Williams">
+                        <div>
+                            <h4>Jessica Williams</h4>
+                            <span>Turkiye Traveler</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">JalanJalan Travel</div>
+                    <p>Creating unforgettable travel experiences since 2010. Your journey begins with us.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/JalanJalanTravelOfficial"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/jalanjalantravel_/?hl=en"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@jalanjalantravel?lang=en-GB"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 JalanJalanTravel Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Set active link based on current page
+        const currentPage = window.location.pathname.split('/').pop();
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.classList.remove('active-link');
+            if(link.getAttribute('href') === currentPage) {
+                link.classList.add('active-link');
+            }
+        });
+
+        // Card hover animation
+        document.querySelectorAll('.package-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Travel | Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Jalan<span>Jalan</span> Travel</a>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="packages.html">Travel Packages</a></li>
+                    <li><a href="review.html">Review</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html" class="active-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our travel experts to start planning your next adventure.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Ready to plan your next adventure? Contact us today and let our travel experts create the perfect itinerary for you. We're here to answer your questions and help you plan the trip of a lifetime.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Our Office</h4>
+                                <p>11, No. 5, Pusat Perdagangan HIllpark, 11A, Persiaran Hill Park, Bandar Hillpark, 42300 Puncak Alam, Selangor</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>+6011-1785 0832</p>
+                                <p style="font-size: 0.9rem; color: #666;">Mon-Fri: 9am-6pm | Sat: 10am-4pm</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>mastodonfly@gmail.com</p>
+                                <p style="font-size: 0.9rem; color: #666;">We respond within 24 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                <p>Saturday: 10:00 AM - 4:00 PM</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.54818537831!2d101.45310091476932!3d3.2109851999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc5be1adef5dd3%3A0x1cb56cf47c7c9c03!2sJalan%20Jalan%20Travel!5e0!3m2!1sen!2smy!4v1706340000000!5m2!1sen!2smy" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Your Phone Number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="package">Interest Package</label>
+                            <select id="package" class="form-control">
+                                <option value="">Select a package</option>
+                                <option value="bali">Bali Paradise</option>
+                                <option value="swiss">Wonderful Maldives</option>
+                                <option value="japan">Turkiye Cultural Journey</option>
+                                <option value="greece">Discover Japan Experience</option>
+                                <option value="australia">Australian Adventure</option>
+                                <option value="thailand">Thailand Explorer</option>
+                                <option value="custom">Custom Package</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="travel-date">Preferred Travel Date</label>
+                            <input type="date" id="travel-date" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="travelers">Number of Travelers</label>
+                            <select id="travelers" class="form-control">
+                                <option value="">Select number</option>
+                                <option value="1">1 Traveler</option>
+                                <option value="2">2 Travelers</option>
+                                <option value="3-4">3-4 Travelers</option>
+                                <option value="5-6">5-6 Travelers</option>
+                                <option value="7+">7+ Travelers</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" class="form-control" placeholder="Tell us about your travel plans, preferences, and any special requests..." rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="services-section" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="services-container">
+                <div class="service-card" style="text-align: left; height: 100%;">
+                    <h3><i class="far fa-question-circle" style="color: #6a11cb; margin-right: 10px;"></i> How far in advance should I book?</h3>
+                    <p>We recommend booking at least 3-6 months in advance for international trips, especially during peak seasons. For last-minute travel, contact us for availability.</p>
+                </div>
+                
+                <div class="service-card" style="text-align: left; height: 100%;">
+                    <h3><i class="far fa-question-circle" style="color: #6a11cb; margin-right: 10px;"></i> Can I customize a package?</h3>
+                    <p>Absolutely! All our packages can be customized to match your preferences, budget, and travel style. Contact us to create your perfect itinerary.</p>
+                </div>
+                
+                <div class="service-card" style="text-align: left; height: 100%;">
+                    <h3><i class="far fa-question-circle" style="color: #6a11cb; margin-right: 10px;"></i> What is your cancellation policy?</h3>
+                    <p>Cancellation policies vary by package and supplier. We provide clear terms during booking and offer travel insurance to protect your investment.</p>
+                </div>
+                
+                <div class="service-card" style="text-align: left; height: 100%;">
+                    <h3><i class="far fa-question-circle" style="color: #6a11cb; margin-right: 10px;"></i> Do you offer group discounts?</h3>
+                    <p>Yes, we offer special rates for groups of 6 or more. Contact us with your group details for a customized quote and special group benefits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">JalanJalan Travel</div>
+                    <p>Creating unforgettable travel experiences since 2010. Your journey begins with us.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/JalanJalanTravelOfficial"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/jalanjalantravel_/?hl=en"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@jalanjalantravel?lang=en-GB"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 JalanJalanTravel Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Set active link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.classList.remove('active-link');
+            if(link.href === window.location.href) {
+                link.classList.add('active-link');
+            }
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const package = document.getElementById('package').value;
+            const travelDate = document.getElementById('travel-date').value;
+            const travelers = document.getElementById('travelers').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if(!name || !email || !message) {
+                alert('Please fill in all required fields (marked with *).');
+                return;
+            }
+            
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // In a real application, you would send this data to a server
+            // For now, we'll just show a success message
+            const packageName = package ? document.querySelector(`#package option[value="${package}"]`).textContent : 'Not specified';
+            const formattedDate = travelDate ? new Date(travelDate).toLocaleDateString() : 'Not specified';
+            
+            alert(`Thank you ${name}! Your inquiry has been submitted successfully.\n\nWe have received the following information:\n- Email: ${email}\n- Phone: ${phone || 'Not provided'}\n- Package Interest: ${packageName}\n- Travel Date: ${formattedDate}\n- Travelers: ${travelers || 'Not specified'}\n\nWe will contact you within 24 hours at ${email} to discuss your travel plans.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Set minimum date for travel date field to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('travel-date').setAttribute('min', today);
+    </script>
+</body>
+</html>
