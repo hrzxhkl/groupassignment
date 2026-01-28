@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JalanJalan Travel | Reviews</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .reviews-filter {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .filter-btn {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 8px 20px;
+            margin: 5px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            border-color: #6a11cb;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .review-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .reviewer-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 3px solid #6a11cb;
+        }
+        
+        .reviewer-info h4 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .reviewer-info .destination {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .review-rating {
+            color: #ffc107;
+            margin-bottom: 5px;
+        }
+        
+        .review-date {
+            color: #888;
+            font-size: 0.85rem;
+        }
+        
+        .review-content {
+            margin-top: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .review-content p {
+            margin-bottom: 15px;
+        }
+        
+        .review-highlights {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .review-highlights h5 {
+            color: #6a11cb;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .highlight-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            background: #f0f2ff;
+            color: #6a11cb;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #6a11cb;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .review-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .reviewer-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Jalan<span>Jalan</span> Travel</a>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="packages.html">Travel Packages</a></li>
+                    <li><a href="review.html" class="active-link">Reviews</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Customer Reviews</h1>
+            <p>See what our travelers say about their experiences with JalanJalan Travel.</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">4.9/5</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1200+</div>
+                    <div class="stat-label">Happy Travelers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Would Recommend</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Countries Explored</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="reviews-filter">
+                <button class="filter-btn active" data-filter="all">All Reviews</button>
+                <button class="filter-btn" data-filter="5-star">5 Star Reviews</button>
+                <button class="filter-btn" data-filter="bali">Bali Experiences</button>
+                <button class="filter-btn" data-filter="japan">Japan Experiences</button>
+                <button class="filter-btn" data-filter="europe">Europe Experiences</button>
+            </div>
+            
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card" data-category="5-star bali">
+                    <div class="review-header">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson" class="reviewer-avatar">
+                        <div class="reviewer-info">
+                            <h4>Sarah Johnson</h4>
+                            <div class="destination">Bali Paradise Package</div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">March 15, 2024</div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"Our trip to Bali was absolutely magical! From the moment we landed, everything was perfectly organized. The Ubud Monkey Forest and Tanah Lot Temple visits were highlights. Our guide was knowledgeable and made us feel like family."</p>
+                        <p>The accommodation was beautiful with stunning rice terrace views. The traditional Balinese dinner was an experience we'll never forget. Thank you JalanJalan Travel for creating such wonderful memories!</p>
+                    </div>
+                    <div class="review-highlights">
+                        <h5>Highlights:</h5>
+                        <div class="highlight-tags">
+                            <span class="tag">Excellent Guides</span>
+                            <span class="tag">Beautiful Accommodation</span>
+                            <span class="tag">Cultural Experiences</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-card" data-category="5-star japan">
+                    <div class="review-header">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Michael Chen" class="reviewer-avatar">
+                        <div class="reviewer-info">
+                            <h4>Michael Chen</h4>
+                            <div class="destination">Japanese Cultural Journey</div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">February 28, 2024</div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"As a solo traveler, I was nervous about visiting Japan, but JalanJalan Travel made everything so easy. The bullet train experience was seamless, and the Kyoto temple visits were breathtaking."</p>
+                        <p>The traditional tea ceremony was a highlight - so authentic and peaceful. The local guides were incredibly helpful and spoke excellent English. I felt safe and well taken care of throughout my entire journey.</p>
+                    </div>
+                    <div class="review-highlights">
+                        <h5>Highlights:</h5>
+                        <div class="highlight-tags">
+                            <span class="tag">Solo Travel Friendly</span>
+                            <span class="tag">Authentic Experiences</span>
+                            <span class="tag">Helpful Guides</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="review-card" data-category="5-star europe">
+                    <div class="review-header">
+                        <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="Jessica Williams" class="reviewer-avatar">
+                        <div class="reviewer-info">
+                            <h4>Jessica Williams</h4>
+                            <div class="destination">Australian Adventure</div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">January 10, 2024</div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>“The Australia tour exceeded all expectations! The Great Barrier Reef experience was worth every penny. The natural beauty and underwater views were absolutely breathtaking.”</p>
+                        <p>Our accommodation in Australia offered stunning coastal views and a relaxing atmosphere. The local food experience was a delightful bonus! Everything was perfectly timed and well organized. I highly recommend JalanJalan Travel for unforgettable Australian adventures.</p>
+                    </div>
+                    <div class="review-highlights">
+                        <h5>Highlights:</h5>
+                        <div class="highlight-tags">
+                            <span class="tag">Breathtaking Views</span>
+                            <span class="tag">Perfect Organization</span>
+                            <span class="tag">Comfortable Stays</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 4 -->
+                <div class="review-card" data-category="5-star bali">
+                    <div class="review-header">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David Rodriguez" class="reviewer-avatar">
+                        <div class="reviewer-info">
+                            <h4>David Rodriguez</h4>
+                            <div class="destination">Bali Honeymoon Package</div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">December 5, 2023</div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"We chose JalanJalan Travel for our honeymoon and it was the best decision! They created a romantic, personalized itinerary that exceeded our expectations. The private villa with pool was absolutely stunning."</p>
+                        <p>The Uluwatu cliff views during sunset were magical, and the couple's spa treatment was so relaxing. Every detail was taken care of - even special surprises for our honeymoon. Thank you for making our special trip unforgettable!</p>
+                    </div>
+                    <div class="review-highlights">
+                        <h5>Highlights:</h5>
+                        <div class="highlight-tags">
+                            <span class="tag">Romantic Getaway</span>
+                            <span class="tag">Personalized Service</span>
+                            <span class="tag">Luxury Accommodation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 5 -->
+                <div class="review-card" data-category="5-star europe">
+                    <div class="review-header">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Emma Thompson" class="reviewer-avatar">
+                        <div class="reviewer-info">
+                            <h4>Emma Thompson</h4>
+                            <div class="destination">Thailand Explorer</div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">November 20, 2023</div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"The Thailand island-hopping tour was a dream come true! Phi Phi Islands at sunset were everything I imagined and more. The transfers between islands were smooth and well-organized."</p>
+                        <p>Our guide in Bangkok was incredibly knowledgeable about the Grand Palace and local culture. The Thai street food and cuisine experiences were absolutely delicious. JalanJalan Travel made our island hopping and temple tour adventure stress-free and truly memorable.</p>
+                    </div>
+                    <div class="review-highlights">
+                        <h5>Highlights:</h5>
+                        <div class="highlight-tags">
+                            <span class="tag">Island Hopping</span>
+                            <span class="tag">Historical Insights</span>
+                            <span class="tag">Delicious Food</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 6 -->
+                <div class="review-card" data-category="5-star japan">
+                    <div class="review-header">
+                        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Robert Kim" class="reviewer-avatar">
+                        <div class="reviewer-info">
+                            <h4>Robert Kim</h4>
+                            <div class="destination">Japan Family Tour</div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">October 15, 2023</div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"Traveling to Japan with our two children (ages 8 and 11) was made easy by JalanJalan Travel. They created a family-friendly itinerary that kept both kids and adults engaged and excited."</p>
+                        <p>The Tokyo Disneyland visit was perfectly timed, and the Kyoto temples were fascinating for the whole family. The guides were patient with our children's questions. We created beautiful family memories thanks to your excellent planning.</p>
+                    </div>
+                    <div class="review-highlights">
+                        <h5>Highlights:</h5>
+                        <div class="highlight-tags">
+                            <span class="tag">Family Friendly</span>
+                            <span class="tag">Kid Engaging</span>
+                            <span class="tag">Educational</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submit Review Section -->
+    <section class="contact-section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Share Your Experience</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>We Value Your Feedback</h3>
+                    <p>Your reviews help us improve and help other travelers make informed decisions. Share your JalanJalan Travel experience with our community.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <h4>Review Guidelines</h4>
+                                <p>Be honest and detailed about your experience</p>
+                                <p>Include what you loved and any suggestions</p>
+                                <p>Share photos from your trip (optional)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Verified Reviews</h4>
+                                <p>All reviews are from verified travelers</p>
+                                <p>We never edit or delete honest reviews</p>
+                                <p>Your privacy is always protected</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Submit Your Review</h3>
+                    <form id="reviewForm">
+                        <div class="form-group">
+                            <label for="review-name">Full Name *</label>
+                            <input type="text" id="review-name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="review-email">Email Address *</label>
+                            <input type="email" id="review-email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="review-package">Travel Package *</label>
+                            <select id="review-package" class="form-control" required>
+                                <option value="">Select package</option>
+                                <option value="bali">Bali Paradise</option>
+                                <option value="japan">Japanese Cultural Journey</option>
+                                <option value="swiss">Swiss Alps Adventure</option>
+                                <option value="greece">Greek Island Hopping</option>
+                                <option value="australia">Australian Adventure</option>
+                                <option value="thailand">Thailand Explorer</option>
+                                <option value="custom">Custom Package</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="review-rating">Rating *</label>
+                            <div id="review-rating" style="display: flex; gap: 10px; margin-top: 5px;">
+                                <i class="far fa-star" data-rating="1" style="font-size: 1.5rem; color: #ddd; cursor: pointer;"></i>
+                                <i class="far fa-star" data-rating="2" style="font-size: 1.5rem; color: #ddd; cursor: pointer;"></i>
+                                <i class="far fa-star" data-rating="3" style="font-size: 1.5rem; color: #ddd; cursor: pointer;"></i>
+                                <i class="far fa-star" data-rating="4" style="font-size: 1.5rem; color: #ddd; cursor: pointer;"></i>
+                                <i class="far fa-star" data-rating="5" style="font-size: 1.5rem; color: #ddd; cursor: pointer;"></i>
+                            </div>
+                            <input type="hidden" id="rating-value" value="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="review-title">Review Title *</label>
+                            <input type="text" id="review-title" class="form-control" placeholder="Brief summary of your experience" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="review-message">Your Review *</label>
+                            <textarea id="review-message" class="form-control" placeholder="Share details about your experience, highlights, and any suggestions..." rows="6" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">JalanJalan Travel</div>
+                    <p>Creating unforgettable travel experiences since 2010. Your journey begins with us.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+               <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/JalanJalanTravelOfficial"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/jalanjalantravel_/?hl=en"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@jalanjalantravel?lang=en-GB"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 JalanJalanTravel Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Set active link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.classList.remove('active-link');
+            if(link.href === window.location.href) {
+                link.classList.add('active-link');
+            }
+        });
+
+        // Review filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const reviewCards = document.querySelectorAll('.review-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                reviewCards.forEach(card => {
+                    const categories = card.getAttribute('data-category').split(' ');
+                    
+                    if(filterValue === 'all' || categories.includes(filterValue)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Star rating functionality
+        const stars = document.querySelectorAll('#review-rating .fa-star');
+        const ratingValue = document.getElementById('rating-value');
+        
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = this.getAttribute('data-rating');
+                ratingValue.value = rating;
+                
+                // Update star display
+                stars.forEach((s, index) => {
+                    if(index < rating) {
+                        s.classList.remove('far');
+                        s.classList.add('fas');
+                        s.style.color = '#ffc107';
+                    } else {
+                        s.classList.remove('fas');
+                        s.classList.add('far');
+                        s.style.color = '#ddd';
+                    }
+                });
+            });
+            
+            // Hover effect
+            star.addEventListener('mouseenter', function() {
+                const hoverRating = this.getAttribute('data-rating');
+                stars.forEach((s, index) => {
+                    if(index < hoverRating) {
+                        s.style.color = '#ffc107';
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseleave', function() {
+                const currentRating = ratingValue.value;
+                stars.forEach((s, index) => {
+                    if(index >= currentRating) {
+                        s.style.color = '#ddd';
+                    }
+                });
+            });
+        });
+
+        // Review form submission
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('review-name').value;
+            const email = document.getElementById('review-email').value;
+            const package = document.getElementById('review-package').value;
+            const rating = ratingValue.value;
+            const title = document.getElementById('review-title').value;
+            const message = document.getElementById('review-message').value;
+            
+            // Validation
+            if(!name || !email || !package || rating === '0' || !title || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            if(!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // In a real application, this would send data to a server
+            // For demo purposes, we'll show a success message
+            const packageName = document.querySelector(`#review-package option[value="${package}"]`).textContent;
+            
+            alert(`Thank you ${name} for your review!\n\nYour ${rating}-star review for "${packageName}" has been submitted successfully.\n\nWe appreciate your feedback and will feature it on our website after moderation.`);
+            
+            // Reset form
+            this.reset();
+            
+            // Reset stars
+            stars.forEach(star => {
+                star.classList.remove('fas');
+                star.classList.add('far');
+                star.style.color = '#ddd';
+            });
+            ratingValue.value = '0';
+        });
+
+        // Email validation function
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // Review card hover effect
+        reviewCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
